@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: binance-alpha
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        generateValue: true
+      - key: MORALIS_API_KEY
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: GATEIO_API_KEY
+        sync: false
+      - key: GATEIO_SECRET_KEY
+        sync: false
+      - key: WEBHOOK_BASE_URL
+        sync: false
+
